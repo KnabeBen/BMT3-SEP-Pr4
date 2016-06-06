@@ -17,7 +17,7 @@ private:
     int MusterOk[6]={1,2,1,2,3,1};
     int MusterFalse1[6]={1,2,1,3,2,1};
     int MusterFalse2[5]={1,2,1,2,1};
-    int MusterMessure[10];
+    int MusterMeasure[10];
     /* 
      * 
      *      |-|             dist_2

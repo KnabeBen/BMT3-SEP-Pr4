@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=Cygwin_4.x-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux-x86
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -62,9 +62,9 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
@@ -72,6 +72,11 @@ ${OBJECTDIR}/_ext/2037729719/FestoProcessAccess.o: ../Sources/FestoProcessAccess
 	${MKDIR} -p ${OBJECTDIR}/_ext/2037729719
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/2037729719/FestoProcessAccess.o ../Sources/FestoProcessAccess.cpp
+
+${OBJECTDIR}/_ext/2037729719/FestoProcessAccess.h.gch: ../Sources/FestoProcessAccess.h 
+	${MKDIR} -p ${OBJECTDIR}/_ext/2037729719
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o "$@" ../Sources/FestoProcessAccess.h
 
 ${OBJECTDIR}/_ext/2037729719/HeightSensor.o: ../Sources/HeightSensor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/2037729719
@@ -109,7 +114,7 @@ ${OBJECTDIR}/_ext/2037729719/minilab1008processimage.o: ../Sources/minilab1008pr
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/praktikum4
 
 # Subprojects
 .clean-subprojects:

@@ -10,13 +10,25 @@
 TestClass::TestClass() {
 }
 
+
 TestClass::~TestClass() {
 }
 
+
+// datei öffen, einlsen
 void TestClass::ReadTestData() {
 
-}// datei öffen, einlsen
+}
+
+bool TestClass::comp_sensor(bool sensorResult){
+	return sampleError == sensorResult;
+}
+
+
 unsigned short TestClass::getHight(){
-    
-    return(1);
+	string sample;
+	getLine(sampleValues, sample);									//liest CSV-Datei zeilenweise ein
+	string process_buffer = sample.substr(16, 4);					//extrahiert die Höhenwerte    
+	current_sample = (unsigned short)strtoul(process_buffer);		//wandelt string->u_short
+    return(current_sample);
 };

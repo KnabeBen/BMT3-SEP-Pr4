@@ -11,15 +11,21 @@
 #include "FestoProcessSensors.h"
 
 class TestClass : public FestoProcessSensors {
+
+private:
+	bool sampleError;
+	FILE* sampleValues;
+	unsigned short current_sample;
     
 public:
-
     TestClass();
     ~TestClass();
-    void ReadTestData(); // datei öffen, einlsen
     
-    virtual unsigned short getHight();
+    virtual unsigned short getHight();		//benutzt ReadTestData, um Testwerte zu liefern, wandelt string der CSV in u_int um
+    bool comp_sensor(bool sensorResult);	//vergleicht von HeightSensor geliefertes result() mit bekannten Werten
+
 private:
+    void ReadTestData(FILE* sampleValues); 	// datei öffen, einlesen
 
 };
 
